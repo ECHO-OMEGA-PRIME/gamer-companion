@@ -29,6 +29,8 @@ def main():
     parser.add_argument("--poll", type=float, default=3.0, help="Process poll interval in seconds (default: 3)")
     parser.add_argument("--no-steam", action="store_true", help="Disable Steam integration")
     parser.add_argument("--settings-dir", help="Override per-game settings directory")
+    parser.add_argument("--no-panel", action="store_true", help="Disable the web control panel")
+    parser.add_argument("--port", type=int, default=27060, help="Control panel port (default: 27060)")
     parser.add_argument("--debug", action="store_true", help="Enable debug logging")
     parser.add_argument("--legacy", action="store_true", help="Use legacy orchestrator mode")
     parser.add_argument("--version", action="version", version="GGI APEX PREDATOR v1.0.0")
@@ -63,6 +65,15 @@ def main():
     )
     daemon = GameWatcherDaemon(config=config)
 
+    # Start control panel web server
+    panel_server = None
+    if not args.no_panel:
+        from gamer_companion.daemon.control_panel import start_control_panel
+        try:
+            panel_server = start_control_panel(daemon, port=args.port)
+        except OSError as e:
+            logger.warning(f"Control panel failed to start on port {args.port}: {e}")
+
     # Register event handlers for logging
     daemon.on_game_detected(
         lambda entry, settings: logger.info(
@@ -96,9 +107,12 @@ def main():
         daemon.stop()
     else:
         # Normal daemon mode — watch for games
+        panel_url = f"http://localhost:{args.port}" if not args.no_panel else "disabled"
         logger.info(
-            "GGI APEX PREDATOR — Game Watcher Daemon started\n"
-            "  Watching for game launches... (Ctrl+C to stop)"
+            f"GGI APEX PREDATOR — Game Watcher Daemon started\n"
+            f"  Control Panel: {panel_url}\n"
+            f"  Steam Overlay: Shift+Tab > Web Browser > {panel_url}\n"
+            f"  Watching for game launches... (Ctrl+C to stop)"
         )
         try:
             asyncio.run(daemon.run())
