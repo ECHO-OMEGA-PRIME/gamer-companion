@@ -94,6 +94,190 @@ SPRAY_PATTERNS: Dict[str, SprayPattern] = {
         magazine_size=25, fire_rate_rpm=666,
         description="FAMAS: Burst-friendly, moderate spray",
     ),
+    # --- Valorant ---
+    "vandal": SprayPattern(
+        weapon_name="vandal",
+        offsets=_generate_t_pattern(25, max_vertical=8.5, horizontal_drift=2.8),
+        magazine_size=25, fire_rate_rpm=585,
+        description="Vandal: High vertical pull, wide lateral drift",
+    ),
+    "phantom": SprayPattern(
+        weapon_name="phantom",
+        offsets=_generate_t_pattern(30, max_vertical=6.0, horizontal_drift=2.0),
+        magazine_size=30, fire_rate_rpm=660,
+        description="Phantom: Moderate spray, tighter than Vandal",
+    ),
+    "spectre": SprayPattern(
+        weapon_name="spectre",
+        offsets=_generate_t_pattern(30, max_vertical=4.5, horizontal_drift=1.5),
+        magazine_size=30, fire_rate_rpm=780,
+        description="Spectre: Fast SMG, manageable recoil",
+    ),
+    # --- Call of Duty ---
+    "cod_m4": SprayPattern(
+        weapon_name="cod_m4",
+        offsets=_generate_t_pattern(30, max_vertical=5.5, horizontal_drift=1.8),
+        magazine_size=30, fire_rate_rpm=750,
+        description="CoD M4: Low vertical, minimal lateral",
+    ),
+    "cod_ak47": SprayPattern(
+        weapon_name="cod_ak47",
+        offsets=_generate_t_pattern(30, max_vertical=7.0, horizontal_drift=2.2),
+        magazine_size=30, fire_rate_rpm=682,
+        description="CoD AK-47: Moderate climb, lateral bounce",
+    ),
+    "cod_mp5": SprayPattern(
+        weapon_name="cod_mp5",
+        offsets=_generate_t_pattern(30, max_vertical=3.5, horizontal_drift=1.0),
+        magazine_size=30, fire_rate_rpm=833,
+        description="CoD MP5: Very low recoil, tight grouping",
+    ),
+    "cod_kastov762": SprayPattern(
+        weapon_name="cod_kastov762",
+        offsets=_generate_t_pattern(30, max_vertical=7.5, horizontal_drift=2.5),
+        magazine_size=30, fire_rate_rpm=660,
+        description="CoD Kastov 762: Heavy pull, strong drift",
+    ),
+    "cod_mcw": SprayPattern(
+        weapon_name="cod_mcw",
+        offsets=_generate_t_pattern(30, max_vertical=5.0, horizontal_drift=1.5),
+        magazine_size=30, fire_rate_rpm=720,
+        description="CoD MCW (ACR): Very manageable recoil",
+    ),
+    "cod_striker": SprayPattern(
+        weapon_name="cod_striker",
+        offsets=_generate_t_pattern(30, max_vertical=3.0, horizontal_drift=0.8),
+        magazine_size=30, fire_rate_rpm=900,
+        description="CoD Striker SMG: Laser beam, minimal recoil",
+    ),
+    "cod_holger556": SprayPattern(
+        weapon_name="cod_holger556",
+        offsets=_generate_t_pattern(30, max_vertical=4.5, horizontal_drift=1.2),
+        magazine_size=30, fire_rate_rpm=750,
+        description="CoD Holger 556: Balanced AR, low drift",
+    ),
+    "cod_svamm_sniper": SprayPattern(
+        weapon_name="cod_svamm_sniper",
+        offsets=_generate_t_pattern(5, max_vertical=12.0, horizontal_drift=0.5),
+        magazine_size=5, fire_rate_rpm=55,
+        description="CoD SVA 545 Sniper: One-shot, massive vertical kick",
+    ),
+    # --- Apex Legends ---
+    "r301": SprayPattern(
+        weapon_name="r301",
+        offsets=_generate_t_pattern(28, max_vertical=5.0, horizontal_drift=1.5),
+        magazine_size=28, fire_rate_rpm=810,
+        description="R-301 Carbine: Easiest AR spray in Apex",
+    ),
+    "flatline": SprayPattern(
+        weapon_name="flatline",
+        offsets=_generate_t_pattern(30, max_vertical=7.0, horizontal_drift=3.0),
+        magazine_size=30, fire_rate_rpm=600,
+        description="VK-47 Flatline: Heavy horizontal oscillation",
+    ),
+    "r99": SprayPattern(
+        weapon_name="r99",
+        offsets=_generate_t_pattern(27, max_vertical=6.0, horizontal_drift=2.0),
+        magazine_size=27, fire_rate_rpm=1080,
+        description="R-99: Very fast fire, aggressive vertical pull",
+    ),
+    "volt": SprayPattern(
+        weapon_name="volt",
+        offsets=_generate_t_pattern(28, max_vertical=3.5, horizontal_drift=1.0),
+        magazine_size=28, fire_rate_rpm=720,
+        description="Volt SMG: Minimal recoil, easy to control",
+    ),
+    "havoc": SprayPattern(
+        weapon_name="havoc",
+        offsets=_generate_t_pattern(32, max_vertical=8.0, horizontal_drift=2.5),
+        magazine_size=32, fire_rate_rpm=672,
+        description="Havoc: High recoil after charge-up delay",
+    ),
+    # --- Rainbow Six Siege ---
+    "r6_l85a2": SprayPattern(
+        weapon_name="r6_l85a2",
+        offsets=_generate_t_pattern(30, max_vertical=5.0, horizontal_drift=1.2),
+        magazine_size=30, fire_rate_rpm=670,
+        description="R6 L85A2: Easy AR, good for beginners",
+    ),
+    "r6_f2": SprayPattern(
+        weapon_name="r6_f2",
+        offsets=_generate_t_pattern(30, max_vertical=9.0, horizontal_drift=3.5),
+        magazine_size=30, fire_rate_rpm=980,
+        description="R6 F2: Very fast, extreme vertical recoil",
+    ),
+    "r6_smg11": SprayPattern(
+        weapon_name="r6_smg11",
+        offsets=_generate_t_pattern(17, max_vertical=10.0, horizontal_drift=4.0),
+        magazine_size=17, fire_rate_rpm=1270,
+        description="R6 SMG-11: Highest ROF, brutal recoil",
+    ),
+    # --- PUBG ---
+    "pubg_m416": SprayPattern(
+        weapon_name="pubg_m416",
+        offsets=_generate_t_pattern(30, max_vertical=6.0, horizontal_drift=2.0),
+        magazine_size=30, fire_rate_rpm=680,
+        description="PUBG M416: Versatile, moderate recoil with grip",
+    ),
+    "pubg_akm": SprayPattern(
+        weapon_name="pubg_akm",
+        offsets=_generate_t_pattern(30, max_vertical=9.5, horizontal_drift=3.0),
+        magazine_size=30, fire_rate_rpm=600,
+        description="PUBG AKM: Hard-hitting but wild spray",
+    ),
+    "pubg_ump45": SprayPattern(
+        weapon_name="pubg_ump45",
+        offsets=_generate_t_pattern(25, max_vertical=3.0, horizontal_drift=0.8),
+        magazine_size=25, fire_rate_rpm=650,
+        description="PUBG UMP45: Very stable SMG",
+    ),
+    # --- Rust ---
+    "rust_ak47": SprayPattern(
+        weapon_name="rust_ak47",
+        offsets=_generate_t_pattern(30, max_vertical=10.0, horizontal_drift=4.0,
+                                     pattern="up_then_side"),
+        magazine_size=30, fire_rate_rpm=450,
+        description="Rust AK-47: Notorious S-pattern recoil",
+    ),
+    "rust_lr300": SprayPattern(
+        weapon_name="rust_lr300",
+        offsets=_generate_t_pattern(30, max_vertical=6.0, horizontal_drift=2.0),
+        magazine_size=30, fire_rate_rpm=500,
+        description="Rust LR-300: Easier alternative to AK",
+    ),
+    "rust_mp5": SprayPattern(
+        weapon_name="rust_mp5",
+        offsets=_generate_t_pattern(30, max_vertical=4.0, horizontal_drift=1.5),
+        magazine_size=30, fire_rate_rpm=600,
+        description="Rust MP5A4: Low recoil close-range",
+    ),
+    # --- Battlefield ---
+    "bf_m5a3": SprayPattern(
+        weapon_name="bf_m5a3",
+        offsets=_generate_t_pattern(30, max_vertical=5.0, horizontal_drift=1.5),
+        magazine_size=30, fire_rate_rpm=750,
+        description="BF2042 M5A3: Standard AR, moderate recoil",
+    ),
+    # --- Halo ---
+    "halo_ar": SprayPattern(
+        weapon_name="halo_ar",
+        offsets=_generate_t_pattern(36, max_vertical=3.0, horizontal_drift=2.5),
+        magazine_size=36, fire_rate_rpm=600,
+        description="Halo MA40 AR: Wide spread, low vertical",
+    ),
+    # --- Tarkov ---
+    "tarkov_m4a1": SprayPattern(
+        weapon_name="tarkov_m4a1",
+        offsets=_generate_t_pattern(30, max_vertical=6.5, horizontal_drift=2.0),
+        magazine_size=30, fire_rate_rpm=800,
+        description="Tarkov M4A1: Settles after initial kick",
+    ),
+    "tarkov_ak74": SprayPattern(
+        weapon_name="tarkov_ak74",
+        offsets=_generate_t_pattern(30, max_vertical=7.5, horizontal_drift=2.5),
+        magazine_size=30, fire_rate_rpm=650,
+        description="Tarkov AK-74: Classic upward then side drift",
+    ),
 }
 
 

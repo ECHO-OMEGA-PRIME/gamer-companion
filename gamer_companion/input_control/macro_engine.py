@@ -223,3 +223,298 @@ STRAFE_JUMP = Macro(
         MacroStep(action="release", key="W"),
     ],
 )
+
+# --- Call of Duty macros ---
+COD_SLIDE_CANCEL = Macro(
+    name="cod_slide_cancel",
+    description="Tac sprint → slide → crouch cancel (CoD movement tech)",
+    game="cod_mp",
+    context="movement",
+    steps=[
+        MacroStep(action="press", key="shift", duration_ms=50, delay_after_ms=80),
+        MacroStep(action="hold", key="W"),
+        MacroStep(action="press", key="shift", duration_ms=50, delay_after_ms=150),
+        MacroStep(action="press", key="ctrl", duration_ms=100, delay_after_ms=80),
+        MacroStep(action="press", key="ctrl", duration_ms=50),
+        MacroStep(action="release", key="W"),
+    ],
+    cooldown_ms=300,
+)
+
+COD_BUNNY_HOP = Macro(
+    name="cod_bunny_hop",
+    description="Jump → slide → jump chain for momentum (CoD/Warzone)",
+    game="cod_mp",
+    context="movement",
+    steps=[
+        MacroStep(action="hold", key="W"),
+        MacroStep(action="press", key="space", duration_ms=50, delay_after_ms=150),
+        MacroStep(action="press", key="ctrl", duration_ms=80, delay_after_ms=100),
+        MacroStep(action="press", key="space", duration_ms=50, delay_after_ms=150),
+        MacroStep(action="press", key="ctrl", duration_ms=80, delay_after_ms=100),
+        MacroStep(action="press", key="space", duration_ms=50),
+        MacroStep(action="release", key="W"),
+    ],
+    cooldown_ms=200,
+)
+
+COD_YY_CANCEL = Macro(
+    name="cod_yy_cancel",
+    description="Double weapon swap to cancel animation (YY cancel)",
+    game="cod_mp",
+    context="combat",
+    steps=[
+        MacroStep(action="press", key="Y", duration_ms=30, delay_after_ms=60),
+        MacroStep(action="press", key="Y", duration_ms=30),
+    ],
+    cooldown_ms=500,
+)
+
+COD_DOLPHIN_DIVE = Macro(
+    name="cod_dolphin_dive",
+    description="Sprint → prone → dive animation",
+    game="cod_mp",
+    context="movement",
+    steps=[
+        MacroStep(action="hold", key="W"),
+        MacroStep(action="press", key="shift", duration_ms=50, delay_after_ms=200),
+        MacroStep(action="press", key="ctrl", duration_ms=200),
+        MacroStep(action="release", key="W"),
+    ],
+    cooldown_ms=500,
+)
+
+# --- Apex Legends macros ---
+APEX_SUPERGLIDE = Macro(
+    name="apex_superglide",
+    description="Mantle → crouch+jump at top for speed boost (Apex superglide)",
+    game="apex",
+    context="movement",
+    steps=[
+        MacroStep(action="hold", key="W"),
+        MacroStep(action="press", key="space", duration_ms=50, delay_after_ms=350),
+        MacroStep(action="press", key="space", duration_ms=20, jitter_ms=5),
+        MacroStep(action="press", key="ctrl", duration_ms=20, jitter_ms=5),
+        MacroStep(action="release", key="W"),
+    ],
+    cooldown_ms=1000,
+)
+
+APEX_TAP_STRAFE = Macro(
+    name="apex_tap_strafe",
+    description="Scroll wheel W-taps mid-air for direction change (Apex tap strafe)",
+    game="apex",
+    context="movement",
+    steps=[
+        MacroStep(action="press", key="space", duration_ms=50, delay_after_ms=50),
+        MacroStep(action="press", key="W", duration_ms=10, delay_after_ms=10),
+        MacroStep(action="press", key="W", duration_ms=10, delay_after_ms=10),
+        MacroStep(action="press", key="W", duration_ms=10, delay_after_ms=10),
+        MacroStep(action="press", key="W", duration_ms=10, delay_after_ms=10),
+        MacroStep(action="press", key="W", duration_ms=10),
+    ],
+    cooldown_ms=500,
+)
+
+# --- Valorant macros ---
+VAL_JETT_DASH_SHOOT = Macro(
+    name="val_jett_dash_shoot",
+    description="Jett dash → instant right-click (Valorant)",
+    game="valorant",
+    context="combat",
+    steps=[
+        MacroStep(action="press", key="E", duration_ms=50, delay_after_ms=100),
+        MacroStep(action="click", button="right", duration_ms=50),
+    ],
+    cooldown_ms=2000,
+)
+
+# --- League of Legends macros ---
+LOL_FAST_COMBO = Macro(
+    name="lol_fast_combo",
+    description="Q → auto → W → auto weave (generic LoL combo)",
+    game="league",
+    context="combat",
+    steps=[
+        MacroStep(action="press", key="Q", duration_ms=30, delay_after_ms=100),
+        MacroStep(action="click", button="right", delay_after_ms=200),
+        MacroStep(action="press", key="W", duration_ms=30, delay_after_ms=100),
+        MacroStep(action="click", button="right"),
+    ],
+    cooldown_ms=500,
+)
+
+LOL_WARD_HOP = Macro(
+    name="lol_ward_hop",
+    description="Place ward → Lee Sin W to ward (LoL ward hop)",
+    game="league",
+    context="movement",
+    steps=[
+        MacroStep(action="press", key="4", duration_ms=30),
+        MacroStep(action="click", button="left", delay_after_ms=50),
+        MacroStep(action="press", key="W", duration_ms=30),
+        MacroStep(action="click", button="left"),
+    ],
+    cooldown_ms=1000,
+)
+
+# --- Fortnite macros ---
+FN_90S_BUILD = Macro(
+    name="fn_90s_build",
+    description="Wall → ramp → 90 degree turn (Fortnite building)",
+    game="fortnite",
+    context="combat",
+    steps=[
+        MacroStep(action="click", button="left", delay_after_ms=30),
+        MacroStep(action="press", key="F1", duration_ms=20, delay_after_ms=30),
+        MacroStep(action="click", button="left", delay_after_ms=30),
+        MacroStep(action="press", key="F2", duration_ms=20, delay_after_ms=30),
+        MacroStep(action="click", button="left", delay_after_ms=30),
+        MacroStep(action="press", key="space", duration_ms=50),
+        MacroStep(action="move", x=300, y=0),
+    ],
+    cooldown_ms=100,
+)
+
+FN_EDIT_RESET = Macro(
+    name="fn_edit_reset",
+    description="Open edit → right-click reset → confirm (Fortnite instant reset)",
+    game="fortnite",
+    context="combat",
+    steps=[
+        MacroStep(action="press", key="G", duration_ms=20, delay_after_ms=30),
+        MacroStep(action="click", button="right", delay_after_ms=20),
+        MacroStep(action="press", key="G", duration_ms=20),
+    ],
+    cooldown_ms=100,
+)
+
+# --- Rocket League macros ---
+RL_FAST_AERIAL = Macro(
+    name="rl_fast_aerial",
+    description="Jump+boost → tilt back → second jump (Rocket League fast aerial)",
+    game="rocket_league",
+    context="movement",
+    steps=[
+        MacroStep(action="hold", key="space"),
+        MacroStep(action="hold", key="shift", delay_after_ms=50),
+        MacroStep(action="press", key="down", duration_ms=80, delay_after_ms=50),
+        MacroStep(action="press", key="space", duration_ms=50),
+        MacroStep(action="release", key="shift"),
+    ],
+    cooldown_ms=500,
+)
+
+RL_HALF_FLIP = Macro(
+    name="rl_half_flip",
+    description="Backflip cancel → air roll 180 (Rocket League half flip)",
+    game="rocket_league",
+    context="movement",
+    steps=[
+        MacroStep(action="press", key="space", duration_ms=50, delay_after_ms=80),
+        MacroStep(action="press", key="S", duration_ms=30),
+        MacroStep(action="press", key="space", duration_ms=50, delay_after_ms=50),
+        MacroStep(action="hold", key="W", duration_ms=100),
+        MacroStep(action="press", key="Q", duration_ms=150),
+    ],
+    cooldown_ms=1000,
+)
+
+# --- StarCraft 2 macros ---
+SC2_INJECT_CYCLE = Macro(
+    name="sc2_inject_cycle",
+    description="Select queens → inject larva on all hatches (SC2 Zerg)",
+    game="starcraft2",
+    context="economy",
+    steps=[
+        MacroStep(action="press", key="5", duration_ms=30, delay_after_ms=30),
+        MacroStep(action="press", key="V", duration_ms=30, delay_after_ms=30),
+        MacroStep(action="press", key="backspace", duration_ms=30, delay_after_ms=30),
+        MacroStep(action="click", button="left", delay_after_ms=30),
+        MacroStep(action="press", key="backspace", duration_ms=30, delay_after_ms=30),
+        MacroStep(action="click", button="left", delay_after_ms=30),
+        MacroStep(action="press", key="backspace", duration_ms=30, delay_after_ms=30),
+        MacroStep(action="click", button="left"),
+    ],
+    cooldown_ms=25000,
+)
+
+# --- Fighting game macros ---
+SF6_HADOUKEN = Macro(
+    name="sf6_hadouken",
+    description="Quarter circle forward + punch (SF6 fireball)",
+    game="street_fighter_6",
+    context="combat",
+    steps=[
+        MacroStep(action="press", key="down", duration_ms=30, delay_after_ms=30),
+        MacroStep(action="press", key="down+right", duration_ms=30, delay_after_ms=30),
+        MacroStep(action="press", key="right", duration_ms=30, delay_after_ms=30),
+        MacroStep(action="press", key="U", duration_ms=50),
+    ],
+    cooldown_ms=300,
+)
+
+SF6_SHORYUKEN = Macro(
+    name="sf6_shoryuken",
+    description="Forward → down → down-forward + punch (SF6 DP)",
+    game="street_fighter_6",
+    context="combat",
+    steps=[
+        MacroStep(action="press", key="right", duration_ms=30, delay_after_ms=30),
+        MacroStep(action="press", key="down", duration_ms=30, delay_after_ms=30),
+        MacroStep(action="press", key="down+right", duration_ms=30, delay_after_ms=30),
+        MacroStep(action="press", key="U", duration_ms=50),
+    ],
+    cooldown_ms=500,
+)
+
+# --- WoW macros ---
+WOW_ROTATION_BURST = Macro(
+    name="wow_rotation_burst",
+    description="Pop cooldowns → burst rotation opener (WoW)",
+    game="wow",
+    context="combat",
+    steps=[
+        MacroStep(action="press", key="1", duration_ms=30, delay_after_ms=50),
+        MacroStep(action="press", key="2", duration_ms=30, delay_after_ms=50),
+        MacroStep(action="press", key="shift+1", duration_ms=30, delay_after_ms=1500),
+        MacroStep(action="press", key="3", duration_ms=30, delay_after_ms=50),
+        MacroStep(action="press", key="4", duration_ms=30, delay_after_ms=50),
+        MacroStep(action="press", key="5", duration_ms=30),
+    ],
+    cooldown_ms=120000,
+)
+
+# --- Minecraft macros ---
+MC_BRIDGE = Macro(
+    name="mc_bridge",
+    description="Shift → look down → place block → walk (Minecraft bridging)",
+    game="minecraft",
+    context="movement",
+    steps=[
+        MacroStep(action="hold", key="shift"),
+        MacroStep(action="hold", key="S"),
+        MacroStep(action="click", button="right", delay_after_ms=150),
+        MacroStep(action="click", button="right", delay_after_ms=150),
+        MacroStep(action="click", button="right", delay_after_ms=150),
+        MacroStep(action="click", button="right", delay_after_ms=150),
+        MacroStep(action="click", button="right"),
+        MacroStep(action="release", key="S"),
+        MacroStep(action="release", key="shift"),
+    ],
+    cooldown_ms=200,
+)
+
+# --- EA FC / FIFA macros ---
+FC_SKILL_CHAIN = Macro(
+    name="fc_skill_chain",
+    description="Ball roll → La Croqueta → shot (EA FC skill chain)",
+    game="ea_fc",
+    context="combat",
+    steps=[
+        MacroStep(action="hold", key="right_stick_right", duration_ms=200, delay_after_ms=50),
+        MacroStep(action="press", key="L1+right_stick_right", duration_ms=150, delay_after_ms=50),
+        MacroStep(action="press", key="circle", duration_ms=80),
+    ],
+    cooldown_ms=500,
+)

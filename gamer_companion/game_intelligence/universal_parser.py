@@ -79,6 +79,94 @@ REGION_HINTS: Dict[str, Dict[str, Tuple[float, float, float, float]]] = {
         "inventory": (0.0, 0.3, 0.15, 0.7),          # Left side
         "kills": (0.85, 0.3, 1.0, 0.35),             # Right side
     },
+    "hero_shooter": {
+        "health_bar": (0.35, 0.88, 0.65, 0.93),     # Bottom-center
+        "ammo": (0.75, 0.9, 1.0, 1.0),               # Bottom-right
+        "abilities": (0.35, 0.93, 0.65, 1.0),        # Bottom-center
+        "crosshair": (0.45, 0.45, 0.55, 0.55),       # Center
+        "killfeed": (0.7, 0.0, 1.0, 0.15),           # Top-right
+        "ultimate": (0.45, 0.85, 0.55, 0.9),         # Center-bottom
+        "objective": (0.35, 0.0, 0.65, 0.06),        # Top-center
+    },
+    "arena_shooter": {
+        "health_bar": (0.0, 0.9, 0.2, 1.0),         # Bottom-left
+        "ammo": (0.8, 0.9, 1.0, 1.0),                # Bottom-right
+        "minimap": (0.0, 0.0, 0.2, 0.2),             # Top-left
+        "crosshair": (0.45, 0.45, 0.55, 0.55),       # Center
+        "score": (0.35, 0.0, 0.65, 0.05),            # Top-center
+        "vehicle_hud": (0.3, 0.85, 0.7, 1.0),        # Bottom-center
+    },
+    "rts": {
+        "minimap": (0.0, 0.75, 0.2, 1.0),            # Bottom-left
+        "resources": (0.3, 0.0, 0.7, 0.04),           # Top-center
+        "supply": (0.7, 0.0, 0.85, 0.04),             # Top-right area
+        "command_card": (0.75, 0.75, 1.0, 1.0),       # Bottom-right
+        "unit_info": (0.3, 0.75, 0.7, 1.0),           # Bottom-center
+        "selection": (0.3, 0.88, 0.7, 1.0),           # Bottom-center wireframe
+    },
+    "fighting": {
+        "health_bar_p1": (0.0, 0.0, 0.45, 0.06),     # Top-left
+        "health_bar_p2": (0.55, 0.0, 1.0, 0.06),      # Top-right
+        "super_meter": (0.0, 0.9, 0.45, 0.95),        # Bottom-left
+        "timer": (0.45, 0.0, 0.55, 0.06),             # Top-center
+        "combo_counter": (0.35, 0.3, 0.65, 0.4),      # Center
+    },
+    "racing": {
+        "speedometer": (0.8, 0.8, 1.0, 1.0),         # Bottom-right
+        "minimap": (0.0, 0.75, 0.2, 1.0),             # Bottom-left
+        "position": (0.0, 0.0, 0.1, 0.06),            # Top-left
+        "lap_counter": (0.85, 0.0, 1.0, 0.06),        # Top-right
+        "timer": (0.4, 0.0, 0.6, 0.05),               # Top-center
+        "tire_wear": (0.85, 0.3, 1.0, 0.5),           # Right side
+    },
+    "sports": {
+        "score": (0.3, 0.0, 0.7, 0.06),              # Top-center
+        "timer": (0.45, 0.0, 0.55, 0.04),             # Top-center
+        "minimap": (0.8, 0.75, 1.0, 1.0),             # Bottom-right
+        "player_indicator": (0.45, 0.7, 0.55, 0.75),  # Bottom-center
+        "stamina": (0.0, 0.9, 0.15, 0.95),            # Bottom-left
+    },
+    "card": {
+        "hand": (0.15, 0.75, 0.85, 1.0),             # Bottom-center
+        "board": (0.1, 0.3, 0.9, 0.7),                # Center
+        "mana": (0.0, 0.85, 0.1, 0.95),               # Bottom-left
+        "enemy_health": (0.45, 0.0, 0.55, 0.06),      # Top-center
+        "own_health": (0.45, 0.94, 0.55, 1.0),        # Bottom-center
+        "deck_count": (0.9, 0.5, 1.0, 0.6),           # Right side
+    },
+    "survival": {
+        "health_bar": (0.0, 0.9, 0.2, 0.95),         # Bottom-left
+        "hunger": (0.0, 0.95, 0.1, 1.0),              # Bottom-left under health
+        "hotbar": (0.25, 0.92, 0.75, 1.0),            # Bottom-center
+        "inventory": (0.25, 0.1, 0.75, 0.85),         # Center (when open)
+        "crosshair": (0.45, 0.45, 0.55, 0.55),        # Center
+        "minimap": (0.8, 0.0, 1.0, 0.2),              # Top-right
+    },
+    "mmo": {
+        "health_bar": (0.0, 0.0, 0.2, 0.04),         # Top-left (player frame)
+        "target_health": (0.0, 0.04, 0.2, 0.08),      # Below player frame
+        "action_bar": (0.2, 0.92, 0.8, 1.0),          # Bottom-center
+        "minimap": (0.82, 0.0, 1.0, 0.18),            # Top-right
+        "chat": (0.0, 0.7, 0.3, 0.9),                 # Bottom-left
+        "party_frames": (0.0, 0.15, 0.1, 0.5),        # Left side
+        "boss_health": (0.2, 0.0, 0.8, 0.03),         # Top-center
+    },
+    "soulslike": {
+        "health_bar": (0.05, 0.02, 0.35, 0.04),      # Top-left
+        "stamina": (0.05, 0.04, 0.3, 0.06),           # Below health
+        "fp_bar": (0.05, 0.06, 0.25, 0.08),           # Below stamina
+        "boss_health": (0.15, 0.92, 0.85, 0.96),      # Bottom-center
+        "souls": (0.8, 0.0, 1.0, 0.04),               # Top-right
+        "items": (0.75, 0.85, 1.0, 1.0),              # Bottom-right
+    },
+    "auto_battler": {
+        "board": (0.1, 0.2, 0.9, 0.75),               # Center
+        "bench": (0.1, 0.8, 0.9, 0.95),               # Bottom
+        "gold": (0.0, 0.0, 0.1, 0.04),                # Top-left
+        "level": (0.0, 0.04, 0.1, 0.08),              # Top-left
+        "shop": (0.15, 0.0, 0.85, 0.15),              # Top-center
+        "health": (0.9, 0.0, 1.0, 0.3),               # Right side (player list)
+    },
 }
 
 

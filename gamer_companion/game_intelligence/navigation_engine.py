@@ -81,6 +81,93 @@ PRESET_ROUTES: Dict[str, List[dict]] = {
         {"action_type": "click", "target": "sensitivity", "wait_ms": 50},
         {"action_type": "type", "text": "1.2", "wait_ms": 50},
     ],
+    # --- Call of Duty ---
+    "cod_loadout_select": [
+        {"action_type": "wait", "wait_ms": 500},
+        {"action_type": "click", "target": "loadout_menu", "wait_ms": 200},
+        {"action_type": "click", "target": "loadout_1", "wait_ms": 100},
+    ],
+    "cod_buy_station_loadout": [
+        {"action_type": "click", "target": "buy_station", "wait_ms": 200},
+        {"action_type": "click", "target": "buy_loadout_drop", "wait_ms": 100},
+        {"action_type": "click", "target": "confirm", "wait_ms": 50},
+    ],
+    "cod_buy_station_uav": [
+        {"action_type": "click", "target": "buy_station", "wait_ms": 200},
+        {"action_type": "click", "target": "killstreaks", "wait_ms": 100},
+        {"action_type": "click", "target": "uav", "wait_ms": 50},
+    ],
+    "cod_buy_station_plates": [
+        {"action_type": "click", "target": "buy_station", "wait_ms": 200},
+        {"action_type": "click", "target": "armor_plates", "wait_ms": 100},
+    ],
+    # --- Valorant ---
+    "val_buy_vandal": [
+        {"action_type": "click", "target": "buy_menu", "wait_ms": 100},
+        {"action_type": "click", "target": "rifles", "wait_ms": 50},
+        {"action_type": "click", "target": "vandal", "wait_ms": 50},
+    ],
+    "val_buy_phantom": [
+        {"action_type": "click", "target": "buy_menu", "wait_ms": 100},
+        {"action_type": "click", "target": "rifles", "wait_ms": 50},
+        {"action_type": "click", "target": "phantom", "wait_ms": 50},
+    ],
+    "val_buy_armor_full": [
+        {"action_type": "click", "target": "buy_menu", "wait_ms": 100},
+        {"action_type": "click", "target": "armor", "wait_ms": 50},
+        {"action_type": "click", "target": "heavy_shields", "wait_ms": 50},
+    ],
+    # --- League of Legends ---
+    "lol_buy_item_1": [
+        {"action_type": "click", "target": "shop_button", "wait_ms": 200},
+        {"action_type": "click", "target": "recommended_1", "wait_ms": 100},
+        {"action_type": "click", "target": "buy_button", "wait_ms": 50},
+        {"action_type": "click", "target": "shop_close", "wait_ms": 50},
+    ],
+    "lol_trinket_swap": [
+        {"action_type": "click", "target": "shop_button", "wait_ms": 200},
+        {"action_type": "click", "target": "search_bar", "wait_ms": 50},
+        {"action_type": "type", "text": "oracle", "wait_ms": 100},
+        {"action_type": "click", "target": "result_1", "wait_ms": 50},
+        {"action_type": "click", "target": "buy_button", "wait_ms": 50},
+    ],
+    # --- Dota 2 ---
+    "dota_buy_bkb": [
+        {"action_type": "click", "target": "shop_button", "wait_ms": 200},
+        {"action_type": "click", "target": "search_bar", "wait_ms": 50},
+        {"action_type": "type", "text": "black king bar", "wait_ms": 100},
+        {"action_type": "click", "target": "result_1", "wait_ms": 50},
+        {"action_type": "click", "target": "buy_button", "wait_ms": 50},
+    ],
+    # --- Fortnite ---
+    "fn_queue_solo": [
+        {"action_type": "click", "target": "game_mode", "wait_ms": 200},
+        {"action_type": "click", "target": "solo", "wait_ms": 100},
+        {"action_type": "click", "target": "play", "wait_ms": 50},
+    ],
+    # --- Overwatch ---
+    "ow_hero_select": [
+        {"action_type": "click", "target": "hero_grid", "wait_ms": 200},
+        {"action_type": "click", "target": "preferred_hero", "wait_ms": 100},
+        {"action_type": "click", "target": "confirm", "wait_ms": 100},
+    ],
+    # --- Hearthstone ---
+    "hs_end_turn": [
+        {"action_type": "click", "target": "end_turn_button", "wait_ms": 200},
+    ],
+    "hs_play_card": [
+        {"action_type": "drag", "target": "hand_card_1", "wait_ms": 100},
+    ],
+    # --- Rocket League ---
+    "rl_quick_chat_nice_shot": [
+        {"action_type": "press", "target": "d_pad_right", "wait_ms": 50},
+        {"action_type": "press", "target": "d_pad_up", "wait_ms": 50},
+    ],
+    # --- SC2 ---
+    "sc2_build_worker": [
+        {"action_type": "click", "target": "town_hall", "wait_ms": 50},
+        {"action_type": "press", "target": "S", "wait_ms": 30},
+    ],
 }
 
 
