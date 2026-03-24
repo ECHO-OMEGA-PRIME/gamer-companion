@@ -28,6 +28,7 @@ if TYPE_CHECKING:
 
 # The daemon reference — set by start_control_panel()
 _daemon: Optional["GameWatcherDaemon"] = None
+_tutorial_store = None  # Set by start_control_panel()
 
 DEFAULT_PORT = 27060
 
@@ -74,6 +75,10 @@ class ControlPanelHandler(BaseHTTPRequestHandler):
 
         if path == "/" or path == "/panel":
             self._html_response(PANEL_HTML)
+        elif path == "/tutorial":
+            self._serve_tutorial()
+        elif path == "/api/tutorial/progress":
+            self._api_tutorial_progress()
         elif path == "/api/status":
             self._api_status()
         elif path == "/api/games":
@@ -108,6 +113,10 @@ class ControlPanelHandler(BaseHTTPRequestHandler):
             self._api_deactivate()
         elif path == "/api/settings":
             self._api_set_settings(body)
+        elif path == "/api/tutorial/complete-step":
+            self._api_tutorial_complete_step(body)
+        elif path == "/api/tutorial/complete":
+            self._api_tutorial_complete(body)
         else:
             self._json_response({"error": "not found"}, 404)
 
@@ -181,6 +190,41 @@ class ControlPanelHandler(BaseHTTPRequestHandler):
         _daemon.update_settings(game_id, **body)
         self._json_response({"success": True, "game_id": game_id})
 
+    # ── Tutorial handlers ──────────────────────────────────────────────
+
+    def _serve_tutorial(self):
+        from gamer_companion.daemon.tutorial import get_tutorial_page_html
+        self._html_response(get_tutorial_page_html())
+
+    def _api_tutorial_progress(self):
+        if not _tutorial_store:
+            self._json_response({})
+            return
+        from dataclasses import asdict
+        progress = _tutorial_store.load()
+        self._json_response(asdict(progress))
+
+    def _api_tutorial_complete_step(self, body: dict):
+        if not _tutorial_store:
+            self._json_response({"error": "tutorial store not initialized"}, 503)
+            return
+        tid = body.get("tutorial_id", "")
+        step = body.get("step", 0)
+        progress = _tutorial_store.load()
+        progress.complete_step(tid, step)
+        _tutorial_store.save(progress)
+        self._json_response({"success": True})
+
+    def _api_tutorial_complete(self, body: dict):
+        if not _tutorial_store:
+            self._json_response({"error": "tutorial store not initialized"}, 503)
+            return
+        tid = body.get("tutorial_id", "")
+        progress = _tutorial_store.load()
+        progress.complete_tutorial(tid)
+        _tutorial_store.save(progress)
+        self._json_response({"success": True})
+
 
 def start_control_panel(
     daemon: "GameWatcherDaemon",
@@ -190,8 +234,13 @@ def start_control_panel(
 
     Returns the HTTPServer instance for shutdown.
     """
-    global _daemon
+    global _daemon, _tutorial_store
     _daemon = daemon
+
+    from gamer_companion.daemon.tutorial import TutorialStore
+    settings_dir = getattr(daemon, '_config', None)
+    settings_dir = getattr(settings_dir, 'settings_dir', None) if settings_dir else None
+    _tutorial_store = TutorialStore(settings_dir=settings_dir)
 
     server = HTTPServer(("127.0.0.1", port), ControlPanelHandler)
 
@@ -502,9 +551,12 @@ PANEL_HTML = r"""<!DOCTYPE html>
 
 <div class="header">
   <h1>GGI APEX PREDATOR <span>Control Panel</span></h1>
-  <div id="daemon-status" class="status-pill idle">
-    <div class="dot"></div>
-    <span>IDLE</span>
+  <div style="display:flex;align-items:center;gap:12px">
+    <a href="/tutorial" style="color:var(--accent);text-decoration:none;font-size:13px;font-weight:600;padding:6px 14px;border:1px solid var(--accent);border-radius:var(--radius)">Tutorials</a>
+    <div id="daemon-status" class="status-pill idle">
+      <div class="dot"></div>
+      <span>IDLE</span>
+    </div>
   </div>
 </div>
 
