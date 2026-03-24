@@ -1,0 +1,70 @@
+# GGI APEX PREDATOR Configuration
+# Edit this file while running — changes apply automatically (hot-reload)
+
+[general]
+mode = "observe"              # observe|assist|copilot|autonomous|training|coach
+language = "en"
+
+[ai]
+skill_level = 0.7             # 0.0-1.0 (affects aim accuracy, reaction time)
+aggression = 0.5              # 0.0=passive, 1.0=hyper-aggressive
+risk_tolerance = 0.5
+llm_provider = "gemini"       # gemini|gpt|grok|bravo|claude
+llm_interval_s = 3.0          # Strategic LLM query frequency (seconds)
+
+[performance]
+target_fps = 30               # Main loop target FPS
+yolo_enabled = true           # YOLO-NAS object detection
+ocr_enabled = true            # OCR for HUD elements
+frame_diff_enabled = true     # Frame differencing for motion
+gpu_device = "cuda"           # cuda|cpu
+
+[audio]
+enabled = true
+gunshot_detection = true
+footstep_detection = true
+spatial_audio = true
+
+[overlay]
+enabled = true
+opacity = 0.8
+show_detections = true        # Draw bounding boxes on enemies
+show_minimap_enhanced = true
+show_economy = true
+show_predictions = true
+font_size = 14
+
+[coach]
+personality = "tactical"      # tactical|aggressive|supportive|drill_sergeant|chill
+voice_enabled = true
+voice_personality = "Echo"    # Echo|Cortana|Marcus|Glados|Shaxx
+callout_frequency = "normal"  # minimal|normal|verbose
+
+[safety]
+max_session_hours = 4         # Auto-stop after this many hours
+max_aps = 15                  # Max actions per second (anti-detection)
+min_reaction_ms = 150         # Minimum reaction time (anti-detection)
+kill_switch_key = "F12"       # Emergency stop hotkey
+micro_pause_interval_s = 45   # Insert micro-pauses every N seconds
+audit_log = true              # Log all actions for review
+
+[server]
+enabled = true
+port = 9600
+host = "127.0.0.1"
+
+[discord]
+enabled = false
+client_id = ""
+
+[paths]
+profiles_dir = "game_profiles"
+models_dir = "models"
+data_dir = "data"
+logs_dir = "logs"
+
+[updates]
+auto_check = true
+auto_download_models = true
+auto_download_profiles = true
+registry_url = "https://echo-gamer-companion-api.bmcii1976.workers.dev"

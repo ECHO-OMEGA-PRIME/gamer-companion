@@ -1,0 +1,135 @@
+{
+  "game_id": "league_of_legends",
+  "display_name": "League of Legends",
+  "genre": "moba",
+  "sub_genre": "3_lane_moba",
+  "process_names": ["League of Legends.exe", "LeagueClient.exe"],
+  "window_titles": ["League of Legends"],
+  "resolution_base": [1920, 1080],
+  "regions": {
+    "minimap": {
+      "name": "minimap",
+      "x_pct": 0.80,
+      "y_pct": 0.72,
+      "w_pct": 0.19,
+      "h_pct": 0.27,
+      "capture_fps": 5
+    },
+    "health_bar": {
+      "name": "health_bar",
+      "x_pct": 0.36,
+      "y_pct": 0.93,
+      "w_pct": 0.14,
+      "h_pct": 0.02,
+      "capture_fps": 10,
+      "ocr_enabled": false
+    },
+    "mana_bar": {
+      "name": "mana_bar",
+      "x_pct": 0.36,
+      "y_pct": 0.95,
+      "w_pct": 0.14,
+      "h_pct": 0.02,
+      "capture_fps": 10
+    },
+    "abilities": {
+      "name": "abilities",
+      "x_pct": 0.38,
+      "y_pct": 0.87,
+      "w_pct": 0.14,
+      "h_pct": 0.05,
+      "capture_fps": 5
+    },
+    "items": {
+      "name": "items",
+      "x_pct": 0.55,
+      "y_pct": 0.88,
+      "w_pct": 0.12,
+      "h_pct": 0.06,
+      "capture_fps": 2
+    },
+    "gold": {
+      "name": "gold",
+      "x_pct": 0.52,
+      "y_pct": 0.94,
+      "w_pct": 0.06,
+      "h_pct": 0.03,
+      "capture_fps": 2,
+      "ocr_enabled": true
+    },
+    "cs_score": {
+      "name": "cs_score",
+      "x_pct": 0.46,
+      "y_pct": 0.01,
+      "w_pct": 0.08,
+      "h_pct": 0.03,
+      "capture_fps": 2,
+      "ocr_enabled": true
+    },
+    "game_timer": {
+      "name": "game_timer",
+      "x_pct": 0.49,
+      "y_pct": 0.0,
+      "w_pct": 0.03,
+      "h_pct": 0.03,
+      "capture_fps": 1,
+      "ocr_enabled": true
+    },
+    "kda": {
+      "name": "kda",
+      "x_pct": 0.42,
+      "y_pct": 0.01,
+      "w_pct": 0.04,
+      "h_pct": 0.03,
+      "capture_fps": 2,
+      "ocr_enabled": true
+    }
+  },
+  "keybinds": {
+    "ability_q": {"action": "ability_q", "key": "q"},
+    "ability_w": {"action": "ability_w", "key": "w"},
+    "ability_e": {"action": "ability_e", "key": "e"},
+    "ability_r": {"action": "ability_r", "key": "r"},
+    "summoner_d": {"action": "summoner_d", "key": "d"},
+    "summoner_f": {"action": "summoner_f", "key": "f"},
+    "item_1": {"action": "item_1", "key": "1"},
+    "item_2": {"action": "item_2", "key": "2"},
+    "item_3": {"action": "item_3", "key": "3"},
+    "recall": {"action": "recall", "key": "b"},
+    "shop": {"action": "shop", "key": "p"},
+    "attack_move": {"action": "attack_move", "key": "a"},
+    "stop": {"action": "stop", "key": "s"},
+    "tab": {"action": "scoreboard", "key": "tab", "hold": true},
+    "center_camera": {"action": "center_camera", "key": "space"},
+    "lock_camera": {"action": "lock_camera", "key": "y"}
+  },
+  "max_players_per_team": 5,
+  "round_based": false,
+  "economy_system": false,
+  "max_health": 100,
+  "max_armor": 0,
+  "respawn": true,
+  "friendly_fire": false,
+  "analysis_fps": 10,
+  "reflex_threshold_ms": 200,
+  "strategic_interval_s": 5.0,
+  "default_skill_level": 0.7,
+  "default_aggression": 0.5,
+  "game_phases": ["loading", "early_game", "mid_game", "late_game", "baron", "dragon", "teamfight"],
+  "fsm_module": "fsm_moba",
+  "overlay_widgets": ["minimap_enhanced", "cs_tracker", "objective_timer", "ward_tracker"],
+  "reward_signals": {
+    "kill": 1.0,
+    "death": -0.8,
+    "assist": 0.4,
+    "cs_perfect": 0.1,
+    "tower_destroy": 0.5,
+    "dragon_kill": 0.6,
+    "baron_kill": 1.0,
+    "inhibitor": 0.7,
+    "game_win": 2.0,
+    "game_loss": -1.0,
+    "first_blood": 0.5
+  },
+  "plugins": ["lol_champion_counter", "lol_item_optimizer", "lol_jungle_timer"]
+}

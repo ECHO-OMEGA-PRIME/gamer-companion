@@ -1,0 +1,234 @@
+{
+  "game_id": "cs2",
+  "display_name": "Counter-Strike 2",
+  "genre": "tactical_fps",
+  "sub_genre": "5v5_bomb",
+  "process_names": ["cs2.exe", "csgo.exe"],
+  "window_titles": ["Counter-Strike 2", "Counter-Strike"],
+  "resolution_base": [1920, 1080],
+  "regions": {
+    "health_bar": {
+      "name": "health_bar",
+      "x_pct": 0.02,
+      "y_pct": 0.92,
+      "w_pct": 0.08,
+      "h_pct": 0.05,
+      "capture_fps": 10,
+      "ocr_enabled": true
+    },
+    "armor_bar": {
+      "name": "armor_bar",
+      "x_pct": 0.11,
+      "y_pct": 0.92,
+      "w_pct": 0.08,
+      "h_pct": 0.05,
+      "capture_fps": 10,
+      "ocr_enabled": true
+    },
+    "ammo": {
+      "name": "ammo",
+      "x_pct": 0.88,
+      "y_pct": 0.92,
+      "w_pct": 0.10,
+      "h_pct": 0.05,
+      "capture_fps": 10,
+      "ocr_enabled": true
+    },
+    "minimap": {
+      "name": "minimap",
+      "x_pct": 0.01,
+      "y_pct": 0.01,
+      "w_pct": 0.17,
+      "h_pct": 0.30,
+      "capture_fps": 5,
+      "ocr_enabled": false
+    },
+    "killfeed": {
+      "name": "killfeed",
+      "x_pct": 0.70,
+      "y_pct": 0.01,
+      "w_pct": 0.29,
+      "h_pct": 0.15,
+      "capture_fps": 5,
+      "ocr_enabled": true
+    },
+    "money": {
+      "name": "money",
+      "x_pct": 0.02,
+      "y_pct": 0.87,
+      "w_pct": 0.06,
+      "h_pct": 0.04,
+      "capture_fps": 2,
+      "ocr_enabled": true
+    },
+    "round_timer": {
+      "name": "round_timer",
+      "x_pct": 0.47,
+      "y_pct": 0.01,
+      "w_pct": 0.06,
+      "h_pct": 0.04,
+      "capture_fps": 2,
+      "ocr_enabled": true
+    },
+    "crosshair": {
+      "name": "crosshair",
+      "x_pct": 0.45,
+      "y_pct": 0.45,
+      "w_pct": 0.10,
+      "h_pct": 0.10,
+      "capture_fps": 30
+    }
+  },
+  "keybinds": {
+    "move_forward": {"action": "move_forward", "key": "w", "hold": true},
+    "move_back": {"action": "move_back", "key": "s", "hold": true},
+    "move_left": {"action": "move_left", "key": "a", "hold": true},
+    "move_right": {"action": "move_right", "key": "d", "hold": true},
+    "shoot": {"action": "shoot", "key": "mouse1"},
+    "aim": {"action": "aim", "key": "mouse2", "hold": true},
+    "reload": {"action": "reload", "key": "r"},
+    "jump": {"action": "jump", "key": "space"},
+    "crouch": {"action": "crouch", "key": "ctrl", "hold": true},
+    "walk": {"action": "walk", "key": "shift", "hold": true},
+    "buy_menu": {"action": "buy_menu", "key": "b"},
+    "drop_weapon": {"action": "drop_weapon", "key": "g"},
+    "inspect": {"action": "inspect", "key": "f"},
+    "scoreboard": {"action": "scoreboard", "key": "tab", "hold": true},
+    "grenade_he": {"action": "grenade_he", "key": "4"},
+    "grenade_flash": {"action": "grenade_flash", "key": "4"},
+    "grenade_smoke": {"action": "grenade_smoke", "key": "4"},
+    "grenade_molotov": {"action": "grenade_molotov", "key": "4"},
+    "primary": {"action": "primary", "key": "1"},
+    "secondary": {"action": "secondary", "key": "2"},
+    "knife": {"action": "knife", "key": "3"}
+  },
+  "max_players_per_team": 5,
+  "round_based": true,
+  "economy_system": true,
+  "max_health": 100,
+  "max_armor": 100,
+  "respawn": false,
+  "friendly_fire": true,
+  "weapons": {
+    "ak47": {
+      "name": "AK-47",
+      "weapon_type": "rifle",
+      "fire_rate_rpm": 600,
+      "damage_body": 36,
+      "damage_head": 143,
+      "movement_penalty": 0.215,
+      "cost": 2700,
+      "magazine_size": 30,
+      "reload_time_ms": 2500
+    },
+    "m4a4": {
+      "name": "M4A4",
+      "weapon_type": "rifle",
+      "fire_rate_rpm": 666,
+      "damage_body": 33,
+      "damage_head": 131,
+      "movement_penalty": 0.215,
+      "cost": 3100,
+      "magazine_size": 30,
+      "reload_time_ms": 3100
+    },
+    "awp": {
+      "name": "AWP",
+      "weapon_type": "sniper",
+      "fire_rate_rpm": 41,
+      "damage_body": 115,
+      "damage_head": 459,
+      "movement_penalty": 0.38,
+      "cost": 4750,
+      "magazine_size": 5,
+      "reload_time_ms": 3700
+    },
+    "deagle": {
+      "name": "Desert Eagle",
+      "weapon_type": "pistol",
+      "fire_rate_rpm": 267,
+      "damage_body": 63,
+      "damage_head": 249,
+      "movement_penalty": 0.0,
+      "cost": 700,
+      "magazine_size": 7,
+      "reload_time_ms": 2200
+    },
+    "glock": {
+      "name": "Glock-18",
+      "weapon_type": "pistol",
+      "fire_rate_rpm": 400,
+      "damage_body": 30,
+      "damage_head": 119,
+      "movement_penalty": 0.0,
+      "cost": 200,
+      "magazine_size": 20,
+      "reload_time_ms": 2200
+    },
+    "usp": {
+      "name": "USP-S",
+      "weapon_type": "pistol",
+      "fire_rate_rpm": 352,
+      "damage_body": 35,
+      "damage_head": 140,
+      "movement_penalty": 0.0,
+      "cost": 200,
+      "magazine_size": 12,
+      "reload_time_ms": 2200
+    }
+  },
+  "maps": {
+    "de_dust2": {
+      "name": "Dust II",
+      "callout_zones": {
+        "a_site": {"x": 0.7, "y": 0.3, "w": 0.15, "h": 0.15, "description": "A bomb site"},
+        "b_site": {"x": 0.3, "y": 0.7, "w": 0.15, "h": 0.15, "description": "B bomb site"},
+        "mid": {"x": 0.5, "y": 0.5, "w": 0.1, "h": 0.2, "description": "Mid doors area"},
+        "long_a": {"x": 0.8, "y": 0.5, "w": 0.1, "h": 0.2, "description": "Long A"},
+        "short_a": {"x": 0.6, "y": 0.4, "w": 0.1, "h": 0.1, "description": "Short A / Catwalk"},
+        "tunnels": {"x": 0.3, "y": 0.8, "w": 0.15, "h": 0.1, "description": "B tunnels"},
+        "ct_spawn": {"x": 0.5, "y": 0.2, "w": 0.1, "h": 0.1, "description": "CT spawn"},
+        "t_spawn": {"x": 0.5, "y": 0.9, "w": 0.1, "h": 0.1, "description": "T spawn"}
+      },
+      "default_positions": {
+        "ct": ["a_site", "b_site", "mid"],
+        "t": ["t_spawn", "long_a", "tunnels"]
+      }
+    },
+    "de_mirage": {
+      "name": "Mirage",
+      "callout_zones": {
+        "a_site": {"x": 0.7, "y": 0.3, "w": 0.15, "h": 0.15, "description": "A site"},
+        "b_site": {"x": 0.3, "y": 0.3, "w": 0.15, "h": 0.15, "description": "B site"},
+        "mid": {"x": 0.5, "y": 0.5, "w": 0.1, "h": 0.15, "description": "Mid"},
+        "palace": {"x": 0.8, "y": 0.4, "w": 0.1, "h": 0.1, "description": "Palace"},
+        "apps": {"x": 0.3, "y": 0.5, "w": 0.1, "h": 0.1, "description": "B apartments"}
+      },
+      "default_positions": {
+        "ct": ["a_site", "b_site", "mid"],
+        "t": ["t_spawn", "palace", "apps"]
+      }
+    }
+  },
+  "analysis_fps": 15,
+  "reflex_threshold_ms": 150,
+  "strategic_interval_s": 3.0,
+  "default_skill_level": 0.7,
+  "default_aggression": 0.5,
+  "game_phases": ["warmup", "freezetime", "buy", "live", "bomb_planted", "post_round"],
+  "fsm_module": "fsm_tactical_fps",
+  "overlay_widgets": ["minimap_enhanced", "damage_receipt", "economy", "crosshair_stats"],
+  "reward_signals": {
+    "kill": 1.0,
+    "death": -0.5,
+    "assist": 0.3,
+    "headshot": 0.5,
+    "bomb_plant": 0.4,
+    "bomb_defuse": 0.6,
+    "round_win": 0.3,
+    "round_loss": -0.2,
+    "ace": 2.0,
+    "clutch_win": 1.5
+  },
+  "plugins": ["cs2_grenade_lineup", "cs2_economy_calc"]
+}

@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gamer-companion"
+version = "1.0.0"
+description = "GGI APEX PREDATOR — AI Gaming Companion with vision, coaching, and autonomous play"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Proprietary — ECHO OMEGA PRIME"}
+authors = [
+    {name = "Bobby Don McWilliams II", email = "bobbymcwilliams@echo-op.com"}
+]
+dependencies = [
+    "loguru>=0.7.0",
+    "mss>=9.0.0",
+    "numpy>=1.24.0",
+    "psutil>=5.9.0",
+    "Pillow>=10.0.0",
+]
+
+[project.scripts]
+gamer-companion = "gamer_companion.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["gamer_companion*"]

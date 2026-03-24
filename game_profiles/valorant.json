@@ -1,0 +1,174 @@
+{
+  "game_id": "valorant",
+  "display_name": "VALORANT",
+  "genre": "tactical_fps",
+  "sub_genre": "hero_shooter",
+  "process_names": ["VALORANT-Win64-Shipping.exe", "VALORANT.exe"],
+  "window_titles": ["VALORANT"],
+  "resolution_base": [1920, 1080],
+  "regions": {
+    "health_bar": {
+      "name": "health_bar",
+      "x_pct": 0.44,
+      "y_pct": 0.93,
+      "w_pct": 0.12,
+      "h_pct": 0.04,
+      "capture_fps": 10,
+      "ocr_enabled": true
+    },
+    "minimap": {
+      "name": "minimap",
+      "x_pct": 0.01,
+      "y_pct": 0.01,
+      "w_pct": 0.17,
+      "h_pct": 0.30,
+      "capture_fps": 5
+    },
+    "abilities": {
+      "name": "abilities",
+      "x_pct": 0.35,
+      "y_pct": 0.90,
+      "w_pct": 0.30,
+      "h_pct": 0.06,
+      "capture_fps": 5
+    },
+    "ammo": {
+      "name": "ammo",
+      "x_pct": 0.88,
+      "y_pct": 0.92,
+      "w_pct": 0.10,
+      "h_pct": 0.05,
+      "capture_fps": 10,
+      "ocr_enabled": true
+    },
+    "ult_points": {
+      "name": "ult_points",
+      "x_pct": 0.48,
+      "y_pct": 0.88,
+      "w_pct": 0.04,
+      "h_pct": 0.04,
+      "capture_fps": 2,
+      "ocr_enabled": true
+    },
+    "killfeed": {
+      "name": "killfeed",
+      "x_pct": 0.70,
+      "y_pct": 0.01,
+      "w_pct": 0.29,
+      "h_pct": 0.18,
+      "capture_fps": 5,
+      "ocr_enabled": true
+    },
+    "money": {
+      "name": "money",
+      "x_pct": 0.46,
+      "y_pct": 0.04,
+      "w_pct": 0.08,
+      "h_pct": 0.03,
+      "capture_fps": 2,
+      "ocr_enabled": true
+    }
+  },
+  "keybinds": {
+    "move_forward": {"action": "move_forward", "key": "w", "hold": true},
+    "move_back": {"action": "move_back", "key": "s", "hold": true},
+    "move_left": {"action": "move_left", "key": "a", "hold": true},
+    "move_right": {"action": "move_right", "key": "d", "hold": true},
+    "shoot": {"action": "shoot", "key": "mouse1"},
+    "aim": {"action": "aim", "key": "mouse2", "hold": true},
+    "reload": {"action": "reload", "key": "r"},
+    "jump": {"action": "jump", "key": "space"},
+    "crouch": {"action": "crouch", "key": "ctrl", "hold": true},
+    "walk": {"action": "walk", "key": "shift", "hold": true},
+    "ability_c": {"action": "ability_c", "key": "c", "cooldown_ms": 0},
+    "ability_q": {"action": "ability_q", "key": "q", "cooldown_ms": 0},
+    "ability_e": {"action": "ability_e", "key": "e", "cooldown_ms": 0},
+    "ultimate": {"action": "ultimate", "key": "x", "cooldown_ms": 0},
+    "buy_menu": {"action": "buy_menu", "key": "b"},
+    "spike_plant": {"action": "spike_plant", "key": "4", "hold": true},
+    "spike_defuse": {"action": "spike_defuse", "key": "4", "hold": true}
+  },
+  "max_players_per_team": 5,
+  "round_based": true,
+  "economy_system": true,
+  "max_health": 100,
+  "max_armor": 50,
+  "respawn": false,
+  "friendly_fire": false,
+  "weapons": {
+    "vandal": {
+      "name": "Vandal",
+      "weapon_type": "rifle",
+      "fire_rate_rpm": 600,
+      "damage_body": 40,
+      "damage_head": 160,
+      "movement_penalty": 0.2,
+      "cost": 2900,
+      "magazine_size": 25,
+      "reload_time_ms": 2500
+    },
+    "phantom": {
+      "name": "Phantom",
+      "weapon_type": "rifle",
+      "fire_rate_rpm": 660,
+      "damage_body": 39,
+      "damage_head": 140,
+      "movement_penalty": 0.2,
+      "cost": 2900,
+      "magazine_size": 30,
+      "reload_time_ms": 2500
+    },
+    "operator": {
+      "name": "Operator",
+      "weapon_type": "sniper",
+      "fire_rate_rpm": 32,
+      "damage_body": 150,
+      "damage_head": 255,
+      "movement_penalty": 0.4,
+      "cost": 4700,
+      "magazine_size": 5,
+      "reload_time_ms": 3700
+    },
+    "sheriff": {
+      "name": "Sheriff",
+      "weapon_type": "pistol",
+      "fire_rate_rpm": 240,
+      "damage_body": 55,
+      "damage_head": 159,
+      "cost": 800,
+      "magazine_size": 6,
+      "reload_time_ms": 2250
+    },
+    "classic": {
+      "name": "Classic",
+      "weapon_type": "pistol",
+      "fire_rate_rpm": 390,
+      "damage_body": 26,
+      "damage_head": 78,
+      "cost": 0,
+      "magazine_size": 12,
+      "reload_time_ms": 1750
+    }
+  },
+  "analysis_fps": 15,
+  "reflex_threshold_ms": 150,
+  "strategic_interval_s": 3.0,
+  "default_skill_level": 0.7,
+  "default_aggression": 0.5,
+  "game_phases": ["warmup", "buy", "pre_round", "live", "spike_planted", "post_round"],
+  "overlay_widgets": ["minimap_enhanced", "ability_tracker", "economy", "ult_tracker"],
+  "reward_signals": {
+    "kill": 1.0,
+    "death": -0.5,
+    "assist": 0.3,
+    "headshot": 0.5,
+    "spike_plant": 0.4,
+    "spike_defuse": 0.6,
+    "round_win": 0.3,
+    "round_loss": -0.2,
+    "ace": 2.0,
+    "clutch_win": 1.5,
+    "ability_kill": 0.4
+  },
+  "plugins": ["valorant_agent_abilities", "valorant_lineups"]
+}
